@@ -59,7 +59,7 @@
         
         .label {
             position: absolute;
-            background: rgba(74, 144, 226, 0.9);
+            background: rgba(74, 226, 99, 0.9);
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
@@ -89,7 +89,7 @@
 <body>
     <h1>Eksplorasi Koloid: Aerosol</h1>
     <h1>☁️ Awan ☁️</h1>
-    <p class="subtitle">Klik label untuk mempelajari komponen aerosol cair!</p>
+    <p class="subtitle">Klik label biru untuk mempelajari komponen aerosol cair!</p>
     
     <div id="canvas-container">
         <canvas id="colloidCanvas" width="700" height="500"></canvas>
@@ -279,8 +279,8 @@
             ctx.lineWidth = 3;
             ctx.setLineDash([5, 5]);
             ctx.beginPath();
-            ctx.moveTo(310, 155);
-            ctx.lineTo(310, 180);
+            ctx.moveTo(330, 200);
+            ctx.lineTo(330, 260);
             ctx.stroke();
             ctx.setLineDash([]);
             
@@ -290,8 +290,8 @@
             ctx.lineWidth = 2;
             
             // Rounded rectangle for text box
-            const boxX = 245;
-            const boxY = 180;
+            const boxX = 255;
+            const boxY = 250;
             const boxWidth = 130;
             const boxHeight = 50;
             const radius = 10;
