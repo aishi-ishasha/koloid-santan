@@ -89,7 +89,7 @@
 <body>
     <h1>Eksplorasi Koloid: Aerosol Padat</h1>
     <h1>☁️ Asap ☁️</h1>
-    <p class="subtitle">Klik label biru untuk mempelajari komponen aerosol cair!</p>
+    <p class="subtitle">Klik label biru untuk mempelajari komponen aerosol padat!</p>
     
     <div id="canvas-container">
         <canvas id="colloidCanvas" width="700" height="500"></canvas>
@@ -368,7 +368,7 @@
                     ctx.fill();
                     
                     // Draw droplet highlight
-                    ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+                    ctx.fillStyle = 'rgba(200, 200, 200, 0.6)';
                     ctx.beginPath();
                     ctx.arc(magDropletX - droplet.size * 0.7, magDropletY - droplet.size * 0.7, 
                            droplet.size * magnification * 0.4, 0, Math.PI * 2);

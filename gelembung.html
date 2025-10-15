@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Koloid Sol - Eksplorasi Interaktif</title>
+    <title>Koloid Busa - Eksplorasi Interaktif</title>
     <style>
         body {
             margin: 0;
             padding: 20px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #FFB3B3 0%, #FFD6D6 100%);
+            background: linear-gradient(135deg, #ffb3e7 0%, #FFD6D6 100%);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -17,13 +17,13 @@
         }
         
         h1 {
-            color: #c03030;
+            color: #c03095;
             margin-bottom: 10px;
             text-align: center;
         }
         
         .subtitle {
-            color: #d05050;
+            color: #d0509b;
             margin-bottom: 20px;
             text-align: center;
             font-size: 18px;
@@ -40,12 +40,12 @@
         canvas {
             display: block;
             border-radius: 10px;
-            background: linear-gradient(180deg, #FFB3B3 0%, #FFD6D6 100%);
+            background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
         }
         
         .info-box {
             background: #ffe8e8;
-            border-left: 4px solid #e24a4a;
+            border-left: 4px solid #e24aaf;
             padding: 15px;
             margin-top: 20px;
             border-radius: 5px;
@@ -54,12 +54,12 @@
         
         .info-box h3 {
             margin-top: 0;
-            color: #c03030;
+            color: #e24aaf;
         }
         
         .label {
             position: absolute;
-            background: rgba(74, 226, 99, 0.9);
+            background: rgba(226, 74, 196, 0.9);
             color: white;
             padding: 8px 15px;
             border-radius: 20px;
@@ -72,7 +72,7 @@
         
         .label:hover {
             transform: scale(1.05);
-            background: rgba(74, 144, 226, 1);
+            background: rgb(74, 216, 226);
         }
         
         #label-medium {
@@ -87,9 +87,9 @@
     </style>
 </head>
 <body>
-    <h1>Eksplorasi Koloid: Sol</h1>
-    <h1>🦷 Pasta Gigi 🦷</h1>
-    <p class="subtitle">Klik label biru untuk mempelajari komponen sol!</p>
+    <h1>Eksplorasi Koloid: Busa</h1>
+    <h1>🫧Busa sabun🫧</h1>
+    <p class="subtitle">Klik label ungu untuk mempelajari komponen busa!</p>
     
     <div id="canvas-container">
         <canvas id="colloidCanvas" width="700" height="500"></canvas>
@@ -98,15 +98,14 @@
     </div>
     
     <div class="info-box">
-        <h3>💡 Apa itu Sol?</h3>
-        <p><strong>Pasta gigi adalah contoh koloid sol</strong> - partikel padat halus seperti kalsium karbonat (CaCO₃) , silika (SiO₂), dan sebagainya terdispersi dalam medium cair yang biasanya terdiri dari air dan gliserin.</p>
+        <h3>💡 Apa itu busa?</h3>
+        <p><strong>Busa adalah koloid </strong> di mana gas atau udara (fase terdispersi) tersebar di dalam zat cair (medium pendispersi).</p>
         <p>Partikel di dalamnya membentuk sistem yang stabil dan homogen secara makroskopis.</p>
-        <p><strong>Ciri-ciri koloid sol:</strong></p>
+        <p><strong>Ciri-ciri koloid busa cair:</strong></p>
         <ul>
-            <li>Partikel padat berukuran sangat kecil (sekitar 1-100 nanometer)</li>
-            <li>Partikel padat tersebar dalam medium cair</li>
-            <li>Stabil dan tidak mengendap jika didiamkan</li>
-            <li>Tidak bisa disaring dengan kertas saring biasa</li>
+            <li>Mengandung banyak gelembung gas kecil yang terperangkap di dalam cairan (seperti air sabun)</li>
+            <li>Kurang stabil (kecuali jika ada zat penstabil)</li>
+            <li>Biasanya keruh atau putih pucat karena pantulan cahaya</li>
         </ul>
     </div>
 
@@ -114,9 +113,9 @@
         const canvas = document.getElementById('colloidCanvas');
         const ctx = canvas.getContext('2d');
 
-        // Load toothpaste image
+        // Load gelembung image
         const odoImage = new Image();
-        odoImage.src = "odol.jpg";
+        odoImage.src = "gelembung.jpg";
         let imageLoaded = false;
 
         odoImage.onload = function() {
@@ -126,11 +125,11 @@
         // State management
         let activeView = null; // 'medium' or 'dispersed'
 
-        // Toothpaste particles
+        // gelembung particles
         const particles = [];
         const particleCount = 400;
 
-        // Toothpaste shape parameters
+        // gelembung shape parameters
         const tubeX = 150;
         const tubeY = 150;
         const pasteStartX = 250;
@@ -139,7 +138,7 @@
         
         // Create particles
         for (let i = 0; i < particleCount; i++) {
-            // Distribute particles in toothpaste stream
+            // Distribute particles in gelembung stream
             const progress = Math.random();
             const x = pasteStartX + (pasteEndX - pasteStartX) * progress;
             const waveAmplitude = 30 + progress * 20;
@@ -175,7 +174,7 @@
                 particle.x += particle.speedX;
                 particle.y += particle.speedY;
                 
-                // Keep particles within toothpaste area
+                // Keep particles within gelembung area
                 if (particle.x < pasteStartX || particle.x > pasteEndX) {
                     particle.speedX *= -1;
                 }
@@ -232,7 +231,7 @@
             ctx.textAlign = 'center';
             ctx.fillText('Cairan:', boxX + boxWidth/2, boxY + 25);
             ctx.font = '18px Arial';
-            ctx.fillText('Air dan Gliserin', boxX + boxWidth/2, boxY + 45);
+            ctx.fillText('Air sabun', boxX + boxWidth/2, boxY + 45);
         }
         
         function drawDispersedView() {
@@ -281,7 +280,7 @@
                     if (particle.color === 'white') {
                         ctx.fillStyle = `rgba(255, 255, 255, ${particle.opacity + 0.3})`;
                     } else {
-                        ctx.fillStyle = `rgba(220, 220, 220, ${particle.opacity + 0.3})`;
+                        ctx.fillStyle = `rgba(255, 255, 255, ${particle.opacity + 0.3})`;
                     }
                     
                     ctx.beginPath();
@@ -353,19 +352,18 @@
             ctx.fillStyle = 'white';
             ctx.font = 'bold 14px Arial';
             ctx.textAlign = 'center';
-            ctx.fillText('Partikel Padat:', boxX + boxWidth/2, boxY + 20);
+            ctx.fillText('Gas', boxX + boxWidth/2, boxY + 20);
             ctx.font = '15px Arial';
-            ctx.fillText('Kalsium karbonat', boxX + boxWidth/2, boxY + 38);
-            ctx.fillText('(CaCO₃) dan Silika (SiO₂)', boxX + boxWidth/2, boxY + 53);
+            ctx.fillText('Udara', boxX + boxWidth/2, boxY + 45);
         }
         
         function animate() {
             // Clear canvas
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             
-            // Draw gambar odol di posisi tertentu
+            // Draw gambar gelembung di posisi tertentu
             if (imageLoaded) {
-            ctx.drawImage(odoImage, 0, 0, 700, 500); // x, y, width, height
+            ctx.drawImage(odoImage, 50, 0, 570, 500); // x, y, width, height
             }
 
             // Draw scene
