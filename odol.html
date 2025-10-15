@@ -89,7 +89,7 @@
 <body>
     <h1>Eksplorasi Koloid: Sol</h1>
     <h1>🦷 Pasta Gigi 🦷</h1>
-    <p class="subtitle">Klik label biru untuk mempelajari komponen sol!</p>
+    <p class="subtitle">Klik label hijau untuk mempelajari komponen sol!</p>
     
     <div id="canvas-container">
         <canvas id="colloidCanvas" width="700" height="500"></canvas>
@@ -195,8 +195,8 @@
             ctx.lineWidth = 3;
             ctx.setLineDash([5, 5]);
             ctx.beginPath();
-            ctx.moveTo(330, 200);
-            ctx.lineTo(330, 260);
+            ctx.moveTo(610, 180);
+            ctx.lineTo(610, 240);
             ctx.stroke();
             ctx.setLineDash([]);
             
@@ -206,8 +206,8 @@
             ctx.lineWidth = 2;
             
             // Rounded rectangle for text box
-            const boxX = 255;
-            const boxY = 250;
+            const boxX = 500;
+            const boxY = 240;
             const boxWidth = 150;
             const boxHeight = 50;
             const radius = 10;
@@ -241,12 +241,12 @@
             const magY = 300;
             const magnifierRadius = 80;
             
-            // Draw line from label to magnifying glass
+            // Draw line from toothpaste to magnifying glass (garisnya odol)
             ctx.strokeStyle = '#4a90e2';
             ctx.lineWidth = 3;
             ctx.setLineDash([5, 5]);
             ctx.beginPath();
-            ctx.moveTo(310, 400);
+            ctx.moveTo(610, 215);
             ctx.lineTo(magX - 20, magY + magnifierRadius - 10);
             ctx.stroke();
             ctx.setLineDash([]);
